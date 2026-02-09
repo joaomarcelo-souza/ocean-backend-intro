@@ -22,6 +22,12 @@ app.get('/oi', (req, res) => {
   res.send('Olá Mundo!')
 })
 
+const list = ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"]
+
+app.get('/characters', (req, res) => {
+  res.json(list)
+})
+
 // Start the server on port 3000
 app.listen(3000, () => {
   console.log('Server is running on http://localhost:3000')

@@ -6,3 +6,8 @@ GET http://localhost:3000/
 
 # endpoint que retorna olá mundo
 GET http://localhost:3000/oi
+
+###
+
+# endpoint que retorna a lista de personagens de Rick and Morty
+GET http://localhost:3000/characters
