@@ -1,0 +1,8 @@
+## Requests para testar os endpoints do servidor
+# endpoint que retorna hello world
+GET http://localhost:3000/
+
+###
+
+# endpoint que retorna olá mundo
+GET http://localhost:3000/oi
