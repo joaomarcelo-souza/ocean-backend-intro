@@ -11,3 +11,8 @@ GET http://localhost:3000/oi
 
 # endpoint que retorna a lista de personagens de Rick and Morty
 GET http://localhost:3000/characters
+
+###
+
+# endpoint que retorna um personagem específico de Rick and Morty pelo ID
+GET http://localhost:3000/characters/1
