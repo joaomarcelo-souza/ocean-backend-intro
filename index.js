@@ -6,6 +6,8 @@ import express from 'express'
 
 const app = express()
 
+app.use(express.json())
+
 /**
  * GET / - Default route
  * Returns a greeting message
@@ -34,6 +36,39 @@ app.get('/characters/:id', (req, res) => {
 
   if (character) {
     res.json({ id, name: character })
+  } else {
+    res.status(404).json({ error: 'Character not found' })
+  }
+})
+
+app.post('/characters', (req, res) => {
+  const { name } = req.body
+  if (name) {
+    list.push(name)
+    res.status(201).json({ message: 'Character added', name })
+  } else {
+    res.status(400).json({ error: 'Name is required' })
+  }
+})
+
+app.put('/characters/:id', (req, res) => {
+  const { id } = req.params
+  const { name } = req.body
+
+  if (list[id]) {
+    list[id] = name
+    res.json({ message: 'Character updated', id, name })
+  } else {
+    res.status(404).json({ error: 'Character not found' })
+  }
+})
+
+app.delete('/characters/:id', (req, res) => {
+  const { id } = req.params
+
+  if (list[id]) {
+    const deletedCharacter = list.splice(id, 1)
+    res.json({ message: 'Character deleted', id, name: deletedCharacter[0] })
   } else {
     res.status(404).json({ error: 'Character not found' })
   }

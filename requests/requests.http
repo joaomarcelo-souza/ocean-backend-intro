@@ -16,3 +16,25 @@ GET http://localhost:3000/characters
 
 # endpoint que retorna um personagem específico de Rick and Morty pelo ID
 GET http://localhost:3000/characters/1
+
+###
+
+POST http://localhost:3000/characters
+Content-Type: application/json
+
+{
+  "name": "Rick Sanchez"
+}
+
+###
+
+PUT http://localhost:3000/characters/1
+Content-Type: application/json
+
+{
+  "name": "Rick Sanchez Updated"
+}
+
+###
+
+DELETE http://localhost:3000/characters/1
